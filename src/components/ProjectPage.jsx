@@ -1,6 +1,6 @@
 // src/components/ProjectPage.jsx
 import React from "react";
-import { Box, Paper, Typography, Chip, Grid } from "@mui/material";
+import { Box, Paper, Typography, Chip } from "@mui/material";
 
 export default function ProjectPage({
   title,
@@ -26,11 +26,11 @@ export default function ProjectPage({
     >
       {/* TITLE */}
       <Box sx={{ textAlign: "center", mb: 4 }}>
-        <Typography variant="h3" sx={{ fontWeight: 700, mb: 1 }}>
+        <Typography variant="h3" sx={{ fontWeight: 700, mb: 1, fontSize: { xs: "1.8rem", md: "3rem" } }}>
           {title}
         </Typography>
         {subtitle && (
-          <Typography variant="h6" sx={{ color: "text.secondary" }}>
+          <Typography variant="h6" sx={{ color: "text.secondary", fontSize: { xs: "0.95rem", md: "1.25rem" } }}>
             {subtitle}
           </Typography>
         )}
@@ -41,7 +41,7 @@ export default function ProjectPage({
         elevation={5}
         sx={{
           borderRadius: 4,
-          p: 5,
+          p: { xs: 2, sm: 3, md: 5 },
           maxWidth: "900px",
           mx: "auto",
         }}
@@ -126,27 +126,36 @@ export default function ProjectPage({
 
       {/* GALLERY */}
       {gallery.length > 0 && (
-        <Grid
-          container
-          spacing={3}
-          sx={{ mt: 5, maxWidth: "1100px", mx: "auto" }}
+        <Box
+          sx={{
+            mt: 6,
+            maxWidth: "900px",
+            mx: "auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: 4,
+          }}
         >
+          <Typography variant="h5" sx={{ fontWeight: 600, textAlign: "center" }}>
+            Screenshots
+          </Typography>
           {gallery.map((img, i) => (
-            <Grid item xs={12} md={4} key={i}>
-              <Paper
-                elevation={4}
-                sx={{ borderRadius: 0, overflow: "hidden" }}
-              >
-                <Box
-                  component="img"
-                  src={img}
-                  alt={`Gallery ${i}`}
-                  sx={{ width: 800 }}
-                />
-              </Paper>
-            </Grid>
+            <Box
+              key={i}
+              component="img"
+              src={img}
+              alt={`Screenshot ${i + 1}`}
+              sx={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                borderRadius: 3,
+                boxShadow: "0 4px 24px rgba(0,0,0,0.13)",
+                border: "1px solid rgba(0,0,0,0.07)",
+              }}
+            />
           ))}
-        </Grid>
+        </Box>
       )}
     </Box>
   );

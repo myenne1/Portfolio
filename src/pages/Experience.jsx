@@ -9,47 +9,57 @@ export default function Experience() {
   const primarySkills = [
     "JavaScript",
     "TypeScript",
-    "React",
-    "Node.js",
     "Python",
+    "Java",
+    "React.js",
+    "Node.js",
+    "Next.js",
+    "FastAPI",
+    "Flask",
     "C",
-    "SQL",
-    "Firebase",
-    "Supabase",
+    "HTML/CSS",
   ];
 
   const toolSkills = [
+    "Linux",
+    "Git",
+    "Docker",
+    "Azure DevOps",
+    "Postman",
+    "JIRA",
+    "Cursor",
+    "Firebase",
+    "Supabase",
+    "SQL",
+    "PostgreSQL",
+    "Vercel",
     "AWS S3",
     "AWS EC2",
-    "Docker",
-    "Vercel",
-    "REST APIs",
-    "WebSockets",
-    "Git",
-    "GitHub",
-    "Material UI",
-    "FastAPI",
-    "OpenAI Whisper",
-    "Supabase Storage",
-    "Amazon SP-API",
   ];
 
   const jobs = [
     {
-      year: "May 2025 - August 2025",
-      role: "Software Developer Intern",
-      company: "NOLA Education",
-      location: "New Orleans",
-      description:
-        "Developed a automated VTT generator, a Python Playwright scraper to transfer data from Althea to Odoo, edited XML files to reflect new changes in legacy slide player.",
+      year: "March 2026 – Present",
+      role: "IT Intern",
+      company: "Dealer Services Network",
+      location: "Remote",
+      bullets: [
+        "Built an internal web application for data tracking and collection using React, TypeScript, and Vercel, used across the team to streamline daily workflows.",
+        "Automated data collection by integrating Microsoft Graph API to extract and process Excel reports directly from Outlook emails on a scheduled basis.",
+        "Managed and verified business entity records in Business Central, identifying and resolving data processing errors to maintain accuracy.",
+      ],
     },
     {
-      year: "August 2023 - May 2024",
-      role: "Student Mentor",
-      company: "LSU Center for Academic Success",
-      location: "Baton Rouge, LA",
-      description:
-        "Mentored first generation college students and held office hours for appointments",
+      year: "May 2025 – August 2025",
+      role: "Software Development Intern",
+      company: "NOLA Education",
+      location: "New Orleans, LA",
+      bullets: [
+        "Built an automated transcription service using OpenAI Whisper that eliminated a manual multi-step workflow for the content team, generating VTT caption files for 2,000+ English and Spanish media files.",
+        "Integrated the service into a FastAPI app on Vercel with a Cron Job scanning S3 every 5 minutes, removing the need for manual uploads and handoffs.",
+        "Implemented a Python Playwright scraper to migrate 5,000+ assets from Althea into Odoo, using an Odoo Sandbox to test via API before pushing to production.",
+        "Led Agile ceremonies in Azure DevOps, authored Given-When-Then user stories, and worked in a Scrum environment.",
+      ],
     },
   ];
 
@@ -67,12 +77,17 @@ export default function Experience() {
           fontWeight: 600,
         }}
       >
-        Louisiana State University | August 2022 - May 2026
+        Louisiana State University | August 2022 – May 2026
       </Typography>
 
-      <Typography sx={{ mb: 3, fontSize: "1.1rem" }}>
-        Software Engineering - Computer Science
+      <Typography sx={{ mb: 0.5, fontSize: "1.1rem" }}>
+        B.S. Computer Science – Software Engineering
       </Typography>
+
+      <Typography sx={{ mb: 3, fontSize: "1rem", color: "text.secondary" }}>
+        GPA: 3.5 &nbsp;·&nbsp; BASF STEM Scholarship Recipient &nbsp;·&nbsp; 3rd place WICS Geaux Hack the Globe 2024
+      </Typography>
+
       <Button
         variant="contained"
         href={ResumeFile}
@@ -89,11 +104,11 @@ export default function Experience() {
           marginBottom: '15px'
         }}
       >
-       View Resume
+        View Resume
       </Button>
 
       <SkillChips title="Primary Stack" items={primarySkills} />
-      <SkillChips title="Mobile, Tools & Cloud" items={toolSkills} />
+      <SkillChips title="Tools & Cloud" items={toolSkills} />
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
         {jobs.map((job, idx) => (

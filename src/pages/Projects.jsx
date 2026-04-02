@@ -62,7 +62,7 @@ export default function Projects() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        paddingRight: 10
+        pr: { xs: 2, md: 10 }
       }}
     >
       <Typography variant="h4" textAlign="center" mb={1}>
